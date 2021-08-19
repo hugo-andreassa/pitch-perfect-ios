@@ -23,6 +23,14 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         btnStopRecording.isEnabled = false
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "stopRecording") {
+            let playSoundsVC = segue.destination as! PlaySoundsViewController
+            let recordedAudioURL = sender as! URL
+            playSoundsVC.recordedAudioURL = recordedAudioURL
+        }
+    }
+    
     @IBAction func recordAudio(_ sender: Any) {
         print("Record button was pressed")
         lblRecording.text = "Recording in Progress..."
@@ -59,6 +67,11 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         print("Finish recording")
+        if (flag) {
+            performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
+        } else {
+            print("Recording was not successful")
+        }
     }
 }
 

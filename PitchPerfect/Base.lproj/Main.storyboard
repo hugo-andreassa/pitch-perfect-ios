@@ -68,15 +68,42 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="71.651785714285708"/>
         </scene>
-        <!--View Controller-->
+        <!--Play Sounds View Controller-->
         <scene sceneID="HJy-6D-9If">
             <objects>
-                <viewController id="zjj-QL-90f" sceneMemberID="viewController">
+                <viewController id="zjj-QL-90f" customClass="PlaySoundsViewController" customModule="PitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JsV-KG-FLb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gof-kZ-8sv">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NbZ-PK-VBH">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLo-Fc-gWt" userLabel="btnSlow">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="774"/>
+                                                <state key="normal" image="Slow"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCK-FO-i4O" userLabel="btnFast">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="774"/>
+                                                <state key="normal" image="Fast"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="mIN-D1-XDi"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <constraints>
+                            <constraint firstItem="mIN-D1-XDi" firstAttribute="trailing" secondItem="gof-kZ-8sv" secondAttribute="trailing" id="7Lf-75-R9E"/>
+                            <constraint firstItem="mIN-D1-XDi" firstAttribute="bottom" secondItem="gof-kZ-8sv" secondAttribute="bottom" id="UEs-Xr-raV"/>
+                            <constraint firstItem="gof-kZ-8sv" firstAttribute="top" secondItem="mIN-D1-XDi" secondAttribute="top" id="cer-sV-rV3"/>
+                            <constraint firstItem="gof-kZ-8sv" firstAttribute="leading" secondItem="mIN-D1-XDi" secondAttribute="leading" id="pSp-Gc-rfM"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="P1j-sx-sQV"/>
                 </viewController>
@@ -104,7 +131,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Fast" width="90" height="90"/>
         <image name="RecordButton" width="155" height="155"/>
+        <image name="Slow" width="90" height="90"/>
         <image name="Stop" width="155" height="155"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
