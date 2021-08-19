@@ -9,6 +9,14 @@ import UIKit
 
 class PlaySoundsViewController: UIViewController {
     
+    @IBOutlet weak var btnSlow: UIButton!
+    @IBOutlet weak var btnFast: UIButton!
+    @IBOutlet weak var btnHighPitch: UIButton!
+    @IBOutlet weak var btnLowPitch: UIButton!
+    @IBOutlet weak var btnReverbe: UIButton!
+    @IBOutlet weak var btnEcho: UIButton!
+    @IBOutlet weak var btnStop: UIButton!
+    
     var recordedAudioURL: URL!
 
     override func viewDidLoad() {
@@ -17,14 +25,6 @@ class PlaySoundsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
